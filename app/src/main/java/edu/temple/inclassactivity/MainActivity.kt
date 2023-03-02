@@ -26,8 +26,9 @@ class MainActivity : AppCompatActivity() {
         // Display images specified in imageArray in Spinner and RecyclerView
         spinner?.adapter = CustomSpinnerAdapter(this, imageArray)
 
-
-        recyclerView?.adapter = CustomRecyclerAdapter(imageArray)
-        recyclerView?.layoutManager = LinearLayoutManager(this)
+        recyclerView?.apply {
+            this.adapter = CustomRecyclerAdapter(imageArray)
+            this.layoutManager = LinearLayoutManager(this@MainActivity)
+        }
     }
 }
